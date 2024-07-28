@@ -1,0 +1,45 @@
+
+$break-tv: 1800px
+$break-desktop-wide: 1400px
+$break-desktop: 1200px
+$break-tablet-large: 992px
+$break-tablet-large1: 991px
+$break-tablet: 768px
+$break-mobile: 565px
+$break-mobile1: 480px
+$break-mobile2: 350px
+
+@mixin respond-to($media)
+  @if $media == tv
+    @media only screen and (max-width: $break-tv)
+      @content
+  @if $media == desktop-wide
+    @media only screen and (max-width: $break-desktop-wide)
+      @content
+  @if $media == desktop
+    @media only screen and (max-width: $break-desktop)
+      @content
+  @if $media == tablet
+    @media only screen and (max-width: $break-tablet)
+      @content
+  @if $media == tablet-large
+    @media only screen and (max-width: $break-tablet-large)
+      @content
+  @if $media == mobile-large
+    @media only screen and (max-width: $break-tablet)
+      @content
+  @if $media == tablet-large1
+    @media only screen and (max-width: $break-tablet-large1)
+      @content
+  @if $media == mobile
+    @media only screen and (min-width: $break-mobile)
+      @content
+  @if $media == mobile1
+    @media only screen and (max-width: $break-mobile1)
+      @content
+  @if $media == mobile2
+    @media only screen and (max-width: $break-mobile2)
+      @content
+  @if $media == desktop1
+    @media only screen and (min-width: $break-desktop)
+      @content

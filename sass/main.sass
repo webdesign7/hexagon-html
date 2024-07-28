@@ -1,0 +1,1050 @@
+body
+	margin: 0
+	padding: 0
+	-webkit-font-smoothing: antialiased
+	font-family: Poppins;
+	font-style: normal;
+	background-attachment: fixed;
+	background-size: cover;
+html
+	scroll-behavior: smooth;
+	transition: all 2s linear
+*
+	box-sizing: border-box
+	outline: none
+
+input, button, input:active, button:active
+	outline: none
+input
+	-webkit-appearance: none;
+
+
+ul
+	list-style-type: none
+	padding: 0
+	margin: 0
+
+.clear
+	clear: both
+
+a:focus
+	outline: none
+
+
+.hidden-item
+	display: none
+
+.visible-item
+	display: block
+
+
+h1, h2, h3
+	margin-top: 0
+	margin-bottom: 0
+
+p
+	margin-top: 0
+	margin-bottom: 0
+
+a
+	text-decoration: none
+.img-responsive
+	display: block
+	max-width: 100%
+
+.s-wrapper
+.container
+	padding: 0 15px
+.s-wrapper
+	position: relative
+	overflow: hidden
+.container
+	max-width: 1612px
+	margin: 0 auto
+.flex
+	display: -webkit-flex
+	display: -moz-flex 
+	display: -ms-flex 
+	display: -o-flex 
+	display: flex 
+	justify-content: flex-start 
+	align-items: flex-start 
+	align-content: stretch 
+	flex-wrap: wrap 
+.flexbetween
+	justify-content: space-between
+.flexcenter
+	justify-content: center
+.flexright
+	justify-content: flex-end
+.flexalcenter
+	align-items: center
+.flexalbottom
+	align-items: flex-end
+.flexalstretch
+	align-items: stretch
+.flexalccenter
+	align-content: center
+.flexnwr
+	flex-wrap: nowrap
+.inflex
+	display: inline-flex
+@import responsive
+
+.b-btn
+	height: 64px;
+	background-color: #f04848;
+	border-radius: 32px;
+	display: flex
+	align-items: center
+	justify-content: center
+	color: #f0edd8;
+	font-family: Avenir;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.2;
+	padding: 0 64px
+	transition: .3s all ease
+	border: 0
+	cursor: pointer
+	&:hover
+		background-color: #ff6868
+	&.transparent
+		border: 4.43571px solid #f0edd8;
+		background-color: transparent
+		&:hover
+			background-color: #fff
+			color: #000
+
+@include respond-to(desktop-wide)
+	.b-btn
+		height: 50px
+		font-size: 18px
+		padding: 0 30px
+
+.s-header
+	position: fixed
+	left: 0
+	top: 0
+	display: block
+	width: 100%
+	height: auto
+	z-index: 110
+	padding: 33px 0
+	transition: .2s;
+	&-toggle
+		display: none
+		cursor: pointer
+		position: relative
+		width: 24px;
+		height: 29px;
+		cursor: pointer;
+		-webkit-transition: all 200ms ease-out;
+		-moz-transition: all 200ms ease-out;
+		-o-transition: all 200ms ease-out;
+		transition: all 200ms ease-out;
+		z-index: 102
+		margin-top: -5px
+		&.active
+			left: -5px
+			.icon-menu-burger
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+				-webkit-transition: transform .2s linear .4s;
+				-moz-transition: transform .2s linear .4s;
+				-o-transition: transform .2s linear .4s;
+				-ms-transition: transform .2s linear .4s;
+				transition: transform .2s linear .4s;
+				-webkit-transition: -webkit-transform .2s linear .4s;
+				height: 1px
+				width: 30px
+
+				&:before
+					-webkit-transition: top .2s linear;
+					-moz-transition: top .2s linear;
+					-o-transition: top .2s linear;
+					-ms-transition: top .2s linear;
+					transition: top .2s linear;
+					top: 0;
+					opacity: 0
+				&:after
+					-webkit-transition: bottom .2s linear;
+					-moz-transition: bottom .2s linear;
+					-o-transition: bottom .2s linear;
+					-ms-transition: bottom .2s linear;
+					transition: bottom .2s linear;
+					bottom: 0;
+				&:before, &:after, .icon-menu-burger-line
+					background: #fff;
+				.icon-menu-burger-line
+					-webkit-transform: rotate(90deg);
+					-moz-transform: rotate(90deg);
+					-o-transform: rotate(90deg);
+					-ms-transform: rotate(90deg);
+					transform: rotate(90deg);
+					width: 100%
+		.icon-menu-burger
+			height: 1px;
+			width: 24px;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			margin: 0;
+			-webkit-transition: transform .2s ease 0;
+			-moz-transition: transform .2s ease 0;
+			-o-transition: transform .2s ease 0;
+			-ms-transition: transform .2s ease 0;
+			transition: transform .2s ease 0;
+			-webkit-transition: -webkit-transform .2s ease 0;
+			&:before
+				top: -8px;
+				-webkit-transition: top .2s linear .4s;
+				-moz-transition: top .2s linear .4s;
+				-o-transition: top .2s linear .4s;
+				-ms-transition: top .2s linear .4s;
+				transition: top .2s linear .4s;
+			&:after
+				bottom: -8px;
+				-webkit-transition: bottom .2s linear .4s;
+				-moz-transition: bottom .2s linear .4s;
+				-o-transition: bottom .2s linear .4s;
+				-ms-transition: bottom .2s linear .4s;
+				transition: bottom .2s linear .4s;
+			&:before, &:after
+				background: #fff;
+				border-radius: 1px;
+				content: '';
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				left: 0;
+			&-line
+				background: #fff;
+				border-radius: 1px;
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				right: 0
+				-webkit-transition: transform .2s linear .2s;
+				-moz-transition: transform .2s linear .2s;
+				-o-transition: transform .2s linear .2s;
+				-ms-transition: transform .2s linear .2s;
+				transition: transform .2s linear .2s;
+				-webkit-transition: -webkit-transform .2s linear .2s;
+	&.active
+		transform: translateY(-100%);
+		transition: .2s ease-in;
+	.container
+		display: flex
+		align-items: center
+		gap: 40px
+		justify-content: space-between
+	&-logo
+		a
+			display: block
+			color: #f0edd8;
+			font-family: "Bebas Neue";
+			font-size: 75px;
+			font-weight: 700;
+			line-height: 1.2;
+	&-menu
+		display: flex
+		align-items: center
+		gap: 30px
+		li 
+			&.active
+				a
+					color: #f04848;
+			a
+				font-family: "Avenir Next";
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 20px;
+				color: #f0edd8;
+.s-menu
+	position: fixed
+	left: 0
+	top: 0
+	z-index: 100
+	width: 100%
+	height: 100%
+	display: block
+	background: #111
+	overflow-y: auto
+	transform: translateX(-100%)
+	transition: transform 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+	display: none
+	&.active
+		transform: translateX(0%)
+	.container
+		height: 100%
+		position: relative
+	&-inner
+		height: 100%
+		position: relative
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 40px
+	.s-header-logo
+		margin: 0
+		padding: 33px 0
+	.s-header-menu
+		padding-top: 40px
+		width: 100%
+		flex-grow: 1;
+		display: block
+	.s-header-menu li a
+		font-size: 31px
+		line-height: 1.5
+@include respond-to(desktop-wide)
+	.s-header-logo a
+		font-size: 50px
+@include respond-to(tablet)
+	.s-header-menu
+		display: none
+	.s-header .b-btn
+		display: none
+	.s-header-toggle
+		display: block
+	.s-menu
+		display: block
+	.s-header.fix
+		.s-header-logo
+			opacity: 0
+	
+.s-hero1
+	position: absolute
+	left: 0
+	top: 0
+	display: block
+	width: 100%
+	height: 100vh
+	&:after
+		content: ""
+		position: absolute
+		left: 0
+		top: 0
+		display: block
+		width: 100%
+		height: 100%
+		background-image: linear-gradient(181deg, black 0%, rgba(0, 0, 0, 0.75) 37%, rgba(0, 0, 0, 0.75) 100%);
+		z-index: 2
+	.container
+		width: 100%
+.s-hero
+	height: 100vh
+	background-image: url("../img/services-bg.jpg")
+	background-position: center 0
+	background-size: cover
+	background-attachment: fixed
+	// &-video
+	// 	position: fixed
+	// 	display: block
+	// 	width: 100%
+	// 	height: 100%
+	// 	left: 0
+	// 	top: 0
+	// 	min-width: 100%; 
+	// 	min-height: 100%;
+	// 	&.mobile
+	// 		display: none
+	// 	&.desk
+	// 		display: block
+	// 	video
+	// 		width: 100%
+	// 		height: 100%
+	// 		position: relative
+	// 		-o-object-fit: cover;
+	// 		object-fit: cover;
+	// 		object-position: 50% 50%;   
+	
+	&-content
+		position: relative
+		z-index: 3
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		width: 100%
+		padding: 200px 0
+		height: 100%
+	.container
+		width: 100%
+	&-title
+		color: #f4f1e1;
+		line-height: 1.2
+		span
+			display: block
+			&.text1
+				font-family: "Bebas Neue";
+				font-size: 54px;
+				font-weight: 700;
+			&.text2
+				font-family: "Bebas Neue";
+				font-size: 200px;
+				font-weight: 700;
+				margin-top: -17px
+			&.text3
+				font-family: Avenir;
+				font-size: 32px;
+				font-weight: 400;
+				margin-top: -18px
+	&-button
+		display: flex
+		padding-top: 60px
+	&-arrow
+		position: absolute
+		left: 0
+		bottom: 50px
+		width: 100%
+		display: flex
+		justify-content: center
+		&-inner
+			position: relative
+			width: 24px;
+			height: 50px;
+			.chevron
+				position: absolute;
+				width: 28px;
+				height: 2px;
+				opacity: 0;
+				transform: scale3d(0.5, 0.5, 0.5);
+				animation: move 3s ease-out infinite;
+				display: block
+				pointer-events: none
+			.chevron:first-child
+				animation: move 3s ease-out 1s infinite;
+			.chevron:nth-child(2)
+				animation: move 3s ease-out 2s infinite;
+			.chevron:before,
+			.chevron:after
+				content: ' ';
+				position: absolute;
+				top: 0;
+				height: 100%;
+				width: 51%;
+				background: #fff;
+			.chevron:before
+				left: 0;
+				transform: skew(0deg, 30deg);
+			.chevron:after
+				right: 0;
+				width: 50%;
+				transform: skew(0deg, -30deg);
+@include respond-to(desktop-wide)
+	.s-hero-title span.text1
+		font-size: 46px
+	.s-hero-title span.text2
+		font-size: 127px
+		margin-top: -10px
+	.s-hero-title span.text3
+		font-size: 27px
+		margin-top: 0
+	.s-hero-button
+		padding-top: 50px
+@include respond-to(tablet)
+	.s-hero-title span.text1
+		font-size: 38px
+	.s-hero-title span.text2
+		font-size: 98px
+	.s-hero-title span.text3
+		font-size: 23px
+	.s-hero-button
+		padding-top: 30px
+
+.s-about
+	background-color: #f04848;
+	padding: 190px 0
+	position: relative
+	z-index: 5
+	&-title
+		color: #6c0d0b;
+		font-family: "Bebas Neue";
+		font-size: 80px;
+		font-weight: 700;
+		line-height: 1.2
+	&-descr
+		color: #6c0d0b;
+		font-family: Avenir;
+		font-size: 28px;
+		font-weight: 400;
+		line-height: 2;
+		padding-top: 31px
+	&-line
+		display: flex
+		align-items: flex-start
+		margin: 0 -15px
+		align-items: center
+		flex-wrap: wrap
+	&-button
+		display: flex
+	&-block
+		padding: 0 15px
+		&.block1
+			width: 60%
+		&.block2
+			width: 40%
+	&-button
+		padding-top: 49px
+	&-imgs
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+	&-img
+		&.img2
+			position: absolute
+			left: -4%;
+			top: -53%;
+		&.img3
+			position: absolute
+			left: 6%;
+			bottom: -35%;
+		&.img4
+			position: absolute
+			right: 5%;
+			bottom: -22%;
+		&.img5
+			position: absolute
+			right: -15%;
+			top: -11%;
+@include respond-to(desktop-wide)
+	.s-about-imgs
+		transform: scale(0.7);
+@include respond-to(desktop)
+	.s-about
+		padding: 100px 0
+	.s-about-descr
+		font-size: 24px
+	.s-about-block.block1
+		width: 50%
+	.s-about-block.block2
+		width: 50%
+@include respond-to(tablet-large)
+	.s-about-imgs
+		transform: scale(1);
+	.s-about-block.block1
+		width: 100%
+	.s-about-block.block2
+		width: 100%
+		display: flex
+		justify-content: center
+	.s-about-descr
+		font-size: 20px
+	.s-about-imgs
+		margin-top: 100px
+		margin-bottom: 50px
+	.s-about-img.img1	
+		img
+			width: 206px
+	.s-about-img.img3
+		left: -15%;
+		bottom: -41%;
+		img
+			width: 128px
+	.s-about-img.img2
+		left: -27%;
+		top: -50%;
+		img
+			width: 165px
+	.s-about-img.img4
+		right: -16%;
+		bottom: -31%;
+		img
+			width: 104px
+	.s-about-title
+		font-size: 62px
+	.s-about-img.img5
+		right: -30%
+		top: -40%
+		img
+			width: 148px
+@include respond-to(tablet)
+	.s-about-imgs
+		margin-top: 120px
+		margin-bottom: 50px
+	.s-about-img.img1	
+	.s-about-img.img3
+		left: -32%;
+		bottom: -23%;
+	.s-about-img.img2
+		left: -27%;
+		top: -43%;
+	.s-about-img.img4
+		right: -11%;
+		bottom: -16%;
+	.s-about-title
+		font-size: 62px
+	.s-about-img.img5
+		right: -30%
+.s-why
+	overflow: hidden
+	padding: 30px 0
+	position: relative
+	z-index: 2
+	background-image: url("../img/services-bg.jpg")
+	background-position: center 0
+	background-size: cover
+	background-attachment: fixed
+	&:after
+		content: ""
+		position: absolute
+		left: 0
+		top: 0
+		display: block
+		width: 100%
+		height: 100%
+		background-image: linear-gradient(181deg, black 0%, rgba(0, 0, 0, 0.75) 37%, rgba(0, 0, 0, 0.75) 100%);
+		z-index: 0
+	.container
+		max-width: inherit
+		position: relative
+		z-index: 2
+	&-line
+		margin: 0 -30px
+		align-items: stretch
+	&-block
+		width: 50%
+		padding: 0 15px
+	&-inner
+		height: 100%
+		background-image: url("../img/why-bg.jpg")
+		background-repeat: no-repeat
+		background-position: 0 0
+		background-size: cover
+	&-info
+		padding: 65px 0
+		padding-left: 50px
+		background-color: #f0edd8;
+		height: 100%
+	&-text
+		color: #6c0d0b;
+		line-height: 36px;
+		font-family: Avenir;
+		font-size: 25px;
+		font-weight: 400;
+		padding-top: 76px
+		&-item
+			+ .s-why-text-item
+				padding-top: 70px
+		h3
+			font-weight: 400
+		h3 span
+			font-family: "Bebas Neue";
+			font-size: 39px;
+			font-weight: 700;
+
+@include respond-to(tablet-large)
+	.s-why-block
+		width: 100%
+	.s-why-line
+		margin: 0 -15px
+	.s-why-info
+		padding-left: 0
+		padding: 50px 30px
+	.s-why-text
+		font-size: 20px
+	.s-why-text
+		padding-top: 50px
+	.s-why-text h3 span
+		font-size: 31px
+
+.s-services
+	background-image: url("../img/services-bg.jpg")
+	background-position: center 0
+	background-size: cover
+	background-attachment: fixed
+	position: relative
+	padding: 190px 0
+	position: relative
+	z-index: 2
+	&:after
+		content: ""
+		position: absolute
+		left: 0
+		top: 0
+		display: block
+		width: 100%
+		height: 100%
+		background-image: linear-gradient(181deg, black 0%, rgba(0, 0, 0, 0.75) 37%, rgba(0, 0, 0, 0.75) 100%);
+		z-index: 2
+	.container
+		position: relative
+		z-index: 3
+	.s-about-title
+		text-align: center
+		color: #fff
+	&-descr
+		color: #f0edd8;
+		font-family: "Myriad Pro";
+		font-size: 25px;
+		font-weight: 400;
+		line-height: 36px;
+		text-align: center
+		padding-top: 24px
+		max-width: 1050px
+		margin: 0 auto
+	&-line
+		max-width: 1300px
+		margin: 0 auto
+		align-items: stretch
+		flex-wrap: wrap
+		padding-top: 100px
+	&-block
+		width: 33.3%
+		padding: 0 15px
+	&-item
+		height: 100%
+		position: relative
+		&-title
+			color: #f0edd8;
+			font-family: "Bebas Neue";
+			font-size: 54px;
+			font-weight: 700;
+			line-height: 25px;
+		&-descr
+			color: #f0edd8;
+			font-family: Avenir;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 33px;
+			text-align: center
+
+
+.flip-container
+	perspective: 1000;
+	height: 100%
+	position: relative
+.flip-container:hover .flipper, .flip-container.hover .flipper
+	transform: rotateY(180deg);
+.flipper 
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+	height: 100%
+
+.front, .back 
+	backface-visibility: hidden;
+.front 
+	z-index: 2;
+	transform: rotateY(0deg);
+	height: 100%
+	display: flex
+	align-items: center
+	position: absolute
+	justify-content: center
+	left: 0
+	top: 0
+	height: 100%
+	width: 100%
+.back
+	transform: rotateY(180deg);
+	background-color: rgba(0,0,0,0.37);
+	border: 6.49286px solid #f04848;
+	height: 100%
+	padding: 40px 30px
+@include respond-to(tablet-large)
+	.s-services-item-title
+		line-height: 1.2
+		text-align: center
+		font-size: 45px
+	.s-services
+		padding: 100px 0
+	.s-services-block
+		width: 50%
+@include respond-to(tablet)
+	
+	.s-services-descr
+		font-size: 20px
+	.s-services-block
+		width: 100%
+	.s-services-line
+		padding-top: 70px
+	
+.s-offer
+	background-color: #f04848;
+	padding: 70px 0
+	text-align: center
+	position: relative
+	z-index: 2
+	.s-about-title
+		font-size: 75px;
+		color: #6c0d0b;
+	&-descr
+		font-family: "Myriad Pro";
+		font-size: 26px;
+		font-weight: 400;
+		color: #6c0d0b;
+		line-height: 1.4
+		padding-top: 10px
+	&-button
+		display: flex
+		justify-content: center
+		padding-top: 20px
+@include respond-to(tablet-large)
+	.s-offer .s-about-title
+		font-size: 45px
+	.s-offer-descr
+		font-size: 20px
+.s-contact
+	padding: 80px 0
+	background-color: #f0edd8;
+	position: relative
+	z-index: 2
+	&-line
+		margin: 0 -15px
+	&-block
+		padding: 0 15px
+		&.block1
+			width: 60%
+		&.block2
+			width: 40%
+	&-form
+		padding-top: 36px
+		&-btn
+			padding-top: 20px
+		&-line
+			margin: 0 -10px -20px
+			flex-wrap: wrap
+		&-block
+			padding: 0 10px 20px
+			width: 50%
+			&.full
+				width: 100%
+		&-item
+			input
+				display: block
+				width: 100%
+				height: 63px;
+				border: 2px solid #8f3634;
+				background-color: transparent
+				color: #000;
+				font-family: Avenir;
+				font-size: 26px;
+				font-weight: 400;
+				line-height: 59px;
+				padding: 0 25px
+			input:-moz-placeholder 
+				opacity: 1
+				color: #7b7b7b;
+			input::-moz-placeholder 
+				opacity: 1
+				color: #7b7b7b;
+			input:-ms-input-placeholder 
+				opacity: 1
+				color: #7b7b7b;
+			input::-webkit-input-placeholder 
+				opacity: 1
+				color: #7b7b7b;
+			textarea
+				display: block
+				width: 100%
+				height: 263px;
+				border: 2px solid #8f3634;
+				background-color: transparent
+				color: #000;
+				font-family: Avenir;
+				font-size: 26px;
+				font-weight: 400;
+				line-height: 1.4;
+				padding: 13px 25px
+			textarea:-moz-placeholder 
+				opacity: 1
+				color: #7b7b7b;
+			textarea::-moz-placeholder 
+				opacity: 1
+				color: #7b7b7b;
+			textarea:-ms-input-placeholder 
+				opacity: 1
+				color: #7b7b7b;
+			textarea::-webkit-input-placeholder 
+				opacity: 1
+				color: #7b7b7b;
+
+
+	&-descr
+		color: #8f3634;
+		font-family: Avenir;
+		font-size: 26px;
+		font-weight: 400;
+		line-height: 25px;
+		padding-top: 60px
+	&-items
+		padding-top: 65px;
+		padding-left: 34%;
+	&-item
+		+ .s-contact-item
+			padding-top: 110px
+	&-subtitle
+		color: #6c0d0b;
+		font-family: "Bebas Neue";
+		font-size: 39px;
+		font-weight: 700;
+		line-height: 25px;
+	&-soc
+		display: flex
+		align-items: center
+		gap: 25px
+		padding-top: 32px
+		li
+			a
+				display: block
+				border-radius: 5px
+			img
+				border-radius: 5px
+	&-link
+		padding-top: 25px
+		a
+			color: #8f3634;
+			font-family: Avenir;
+			font-size: 26px;
+			font-weight: 400;
+			line-height: 25px;
+	&-meeting
+		padding-top: 25px
+	&-btn
+		height: 65px;
+		border: 2px solid #0161ad;
+		border-radius: 32px;
+		width: 100%
+		color: #0065b0;
+		font-family: Avenir;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 25px;
+		gap: 16px
+		padding: 0 15px
+		max-width: 300px
+		transition: .3s all ease
+		&:hover
+			background-color: #0161ad
+			color: #fff
+@include respond-to(desktop)
+	.s-contact-items
+		padding-left: 20px
+@include respond-to(tablet-large)
+	.s-contact-block.block1
+		width: 50%
+	.s-contact-block.block2
+		width: 50%
+	.s-contact-form-item input
+		height: 50px
+		line-height: 46px
+		font-size: 18px
+		padding: 0 15px
+	.s-contact-form-block
+		width: 100%
+	.s-contact-form-item textarea
+		font-size: 18px
+		padding: 20px 15px
+	.s-contact-items
+		padding-top: 70px
+		padding-left: 50px
+	.s-contact-link a
+		font-size: 22px
+	.s-contact-item + .s-contact-item
+		padding-top: 70px
+	.s-contact-btn
+		font-size: 17px
+@include respond-to(tablet)
+	.s-contact-block.block1
+		width: 100%
+	.s-contact-block.block2
+		width: 100%
+	.s-contact-items
+		padding-top: 70px
+		padding-left: 0
+.s-footer
+	background-color: #111;
+	padding-top: 30px
+	padding-bottom: 40px
+	overflow: hidden
+	position: relative
+	z-index: 2
+	.container
+		position: relative
+	&-inner
+		position: relative
+		z-index: 2
+	&-logo
+		display: inline-block
+		vertical-align: top
+		a
+			color: #f04848;
+			font-family: "Bebas Neue";
+			font-size: 80px;
+			font-weight: 700;
+			line-height: 1.2;
+	&-menus
+		gap: 40px
+	&-menu
+		flex-wrap: wrap
+		padding-top: 34px
+		gap: 22px
+		li
+			color: white;
+			font-family: "Avenir Next";
+			font-size: 19px;
+			font-weight: 400;
+			line-height: 25px;
+			&:last-child
+				&:after
+					display: none
+			&:after
+				content: "/"
+				padding-left: 22px
+			a
+				color: white;
+				position: relative
+				&:hover
+					&:before
+						width: 100%
+				&:before
+					content: ""
+					position: absolute
+					left: 0
+					bottom: 0
+					width: 0
+					display: block
+					height: 1px
+					width: 0
+					transition: .3s all
+					background-color: #fff
+
+	&-copy
+		color: #f0edd8;
+		font-family: Avenir;
+		font-size: 19px;
+		font-weight: 400;
+		line-height: 1.2;
+		padding-top: 193px
+	&-text
+		position: absolute
+		bottom: 0
+		right: 0
+		opacity: 0.02;
+		color: #fefefe;
+		font-family: "Bebas Neue";
+		font-size: 321px;
+		font-weight: 700;
+		line-height: 35px;
+
+@include respond-to(tablet-large)
+	.s-footer-logo a
+		font-size: 62px
+	.s-footer-menu li
+		font-size: 15px
+	.s-footer-menus
+		gap: 20px
+	.s-footer-copy
+		padding-top: 150px
+		font-size: 17px
+	.s-footer-text
+		font-size: 172px
+@include respond-to(tablet)
+	.s-footer-text
+		font-size: 99px
+		bottom: -20px
