@@ -166,7 +166,7 @@ a
 				-ms-transition: transform .2s linear .4s;
 				transition: transform .2s linear .4s;
 				-webkit-transition: -webkit-transform .2s linear .4s;
-				height: 1px
+				height: 2px
 				width: 30px
 
 				&:before
@@ -194,7 +194,7 @@ a
 					transform: rotate(90deg);
 					width: 100%
 		.icon-menu-burger
-			height: 1px;
+			height: 2px;
 			width: 24px;
 			position: absolute;
 			top: 50%;
@@ -266,12 +266,28 @@ a
 			&.active
 				a
 					color: #f04848;
+					pointer-events: none
 			a
 				font-family: "Avenir Next";
 				font-size: 16px;
 				font-weight: 400;
 				line-height: 20px;
 				color: #f0edd8;
+				position: relative
+				&:hover
+					&:before
+						width: 100%
+				&:before
+					content: ""
+					position: absolute
+					left: 0
+					bottom: 0
+					width: 0
+					display: block
+					height: 1px
+					width: 0
+					transition: .3s all
+					background-color: #f0edd8
 .s-menu
 	position: fixed
 	left: 0
@@ -330,21 +346,11 @@ a
 	display: block
 	width: 100%
 	height: 100vh
-	&:after
-		content: ""
-		position: absolute
-		left: 0
-		top: 0
-		display: block
-		width: 100%
-		height: 100%
-		background-image: linear-gradient(181deg, black 0%, rgba(0, 0, 0, 0.75) 37%, rgba(0, 0, 0, 0.75) 100%);
-		z-index: 2
 	.container
 		width: 100%
 .s-hero
 	height: 100vh
-	background-image: url("../img/services-bg.jpg")
+	background-image: url("../img/services-bg1.jpg")
 	background-position: center 0
 	background-size: cover
 	background-attachment: fixed
@@ -594,20 +600,10 @@ a
 	padding: 30px 0
 	position: relative
 	z-index: 2
-	background-image: url("../img/services-bg.jpg")
+	background-image: url("../img/services-bg1.jpg")
 	background-position: center 0
 	background-size: cover
 	background-attachment: fixed
-	&:after
-		content: ""
-		position: absolute
-		left: 0
-		top: 0
-		display: block
-		width: 100%
-		height: 100%
-		background-image: linear-gradient(181deg, black 0%, rgba(0, 0, 0, 0.75) 37%, rgba(0, 0, 0, 0.75) 100%);
-		z-index: 0
 	.container
 		max-width: inherit
 		position: relative
@@ -662,7 +658,7 @@ a
 		font-size: 31px
 
 .s-services
-	background-image: url("../img/services-bg.jpg")
+	background-image: url("../img/services-bg1.jpg")
 	background-position: center 0
 	background-size: cover
 	background-attachment: fixed
@@ -670,16 +666,6 @@ a
 	padding: 190px 0
 	position: relative
 	z-index: 2
-	&:after
-		content: ""
-		position: absolute
-		left: 0
-		top: 0
-		display: block
-		width: 100%
-		height: 100%
-		background-image: linear-gradient(181deg, black 0%, rgba(0, 0, 0, 0.75) 37%, rgba(0, 0, 0, 0.75) 100%);
-		z-index: 2
 	.container
 		position: relative
 		z-index: 3
@@ -722,48 +708,85 @@ a
 			line-height: 33px;
 			text-align: center
 
+@include respond-to(desktop1)
+	.flip-container
+		perspective: 1000;
+		height: 100%
+		position: relative
+	.flip-container:hover .flipper, .flip-container.hover .flipper
+		transform: rotateY(180deg);
+	.flipper 
+		transition: 0.6s;
+		transform-style: preserve-3d;
+		position: relative;
+		height: 100%
 
-.flip-container
-	perspective: 1000;
-	height: 100%
-	position: relative
-.flip-container:hover .flipper, .flip-container.hover .flipper
-	transform: rotateY(180deg);
-.flipper 
-	transition: 0.6s;
-	transform-style: preserve-3d;
-	position: relative;
-	height: 100%
+	.front, .back 
+		backface-visibility: hidden;
 
-.front, .back 
-	backface-visibility: hidden;
-.front 
-	z-index: 2;
-	transform: rotateY(0deg);
-	height: 100%
-	display: flex
-	align-items: center
-	position: absolute
-	justify-content: center
-	left: 0
-	top: 0
-	height: 100%
-	width: 100%
-.back
-	transform: rotateY(180deg);
-	background-color: rgba(0,0,0,0.37);
-	border: 6.49286px solid #f04848;
-	height: 100%
-	padding: 40px 30px
-@include respond-to(tablet-large)
+	.front 
+		z-index: 2;
+		transform: rotateY(0deg);
+		height: 100%
+		display: flex
+		align-items: center
+		position: absolute
+		justify-content: center
+		left: 0
+		top: 0
+		height: 100%
+		width: 100%
+	.back
+		transform: rotateY(180deg);
+		background-color: rgba(0,0,0,0.37);
+		border: 6.49286px solid #f04848;
+		height: 100% !important
+		padding: 40px 30px !important
+		overflow: visible !important
+		max-height: inherit !important;
+@include respond-to(desktop)
+	.s-services-block
+		width: 100%
+		padding-bottom: 30px
+	.s-services-line
+		margin: 0 -15px
+		margin-bottom: -30px
 	.s-services-item-title
 		line-height: 1.2
-		text-align: center
-		font-size: 45px
+		text-align: left
+		font-size: 35px
+		cursor: pointer
+		position: relative
+		&.active
+			&:after
+				transform: translateY(-50%) rotateX(180deg)
+		&:after
+			content: ""
+			position: absolute
+			top: 50%
+			transform: translateY(-50%) rotateX(0)
+			background-image: url("../img/arrow-down.svg")
+			width: 20px
+			height: 20px
+			background-size: cover
+			right: 0
+			transition: .3s all ease
+
+	.s-services-item
+		.back
+			transition: padding 0.5s, max-height 0.5s;
+			overflow: hidden;
+			height: 100%;
+			max-height: 0;
+	.s-services-item-descr
+		text-align: left
+
+
+@include respond-to(tablet-large)
+	
 	.s-services
 		padding: 100px 0
-	.s-services-block
-		width: 50%
+	
 @include respond-to(tablet)
 	
 	.s-services-descr
@@ -1112,7 +1135,7 @@ a
 		top: 147px
 		width: 100%
 		height: calc(100% - 147px)
-		background-image: url("../img/services-bg.jpg")
+		background-image: url("../img/services-bg1.jpg")
 		background-position: center 0
 		background-size: cover
 		background-attachment: fixed

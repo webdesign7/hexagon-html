@@ -45,6 +45,21 @@ const aboutAnim = () => {
 		duration: 1.2
 	}, '-=1.2')
 
+	const TLwhy = gsap.timeline({
+		scrollTrigger:{
+			trigger: '#why',
+			start:"top 50%",
+			end:"top 20%",
+			onLeave: self => self.kill(false, true)
+		}
+	}, '+=0');
+	TLwhy
+	.from(".s-why-info", {
+		autoAlpha: 0,
+		x: 100,
+		duration: 1.2
+	}, '+=0.5')
+
 
 
 }
@@ -118,3 +133,27 @@ document.addEventListener("DOMContentLoaded",function(){
 		};
 		scrollTo();
 	}());
+
+let headers = document.querySelectorAll('.s-services-item-title');
+
+for(let h of headers) {
+	h.addEventListener('click', openCurrAccordion);
+}
+function openCurrAccordion() {
+	for(let h of headers) {
+		let parent = h;
+		let article = h.closest('.front').nextElementSibling;
+		if (this === h && !parent.classList.contains('active')) {
+			parent.classList.add('active');
+			article.style.maxHeight = article.scrollHeight + 15 + 'px';
+			article.style.paddingTop = 15 + 'px';
+
+		}
+		else {
+			parent.classList.remove('active');
+			article.style.maxHeight = '0px';
+			article.style.paddingTop = '0px';
+		}
+		
+	}
+}
