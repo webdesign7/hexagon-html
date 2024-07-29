@@ -48,7 +48,17 @@
     font-weight: 400;
 }
 
-
+@font-face {
+    font-family: "Bebas Neue";
+    src: url("../fonts/bebasneue-regular.eot"); /* IE9 */
+    src: url("../fonts/bebasneue-regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/bebasneue-regular.woff2") format("woff2"), /* chrome 36+, firefox 39+,iOS 10+, Android 67+ */
+    url("../fonts/bebasneue-regular.woff") format("woff"), /* chrome, firefox */
+    url("../fonts/bebasneue-regular.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("../fonts/bebasneue-regular.svg#Bebas Neue Regular") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: 400;
+}
 
 
 
