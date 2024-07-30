@@ -103,6 +103,7 @@ const aboutAnim = () => {
 
 
 document.addEventListener("DOMContentLoaded",function(){
+	
 
 	var scrollpos = window.scrollY;
 
