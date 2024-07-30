@@ -11,56 +11,93 @@ gsap.utils.toArray(".s-top").forEach((panel, i) => {
 
 const aboutAnim = () => {
 
-	const TLabout = gsap.timeline({
-		scrollTrigger:{
-			trigger: '#about',
-			start:"top 50%",
-			end:"top 20%",
-			onLeave: self => self.kill(false, true)
-		}
-	}, '+=0');
-	TLabout
-	.from(".s-about-img.img2", {
-		autoAlpha: 0,
-		x: -100,
-		y: -100,
-		duration: 1.2
-	}, '+=0.5')
-	.from(".s-about-img.img3", {
-		autoAlpha: 0,
-		x: -100,
-		y: 100,
-		duration: 1.2
-	}, '-=1.2')
-	.from(".s-about-img.img4", {
-		autoAlpha: 0,
-		x: 100,
-		y: -100,
-		duration: 1.2
-	}, '-=1.2')
-	.from(".s-about-img.img5", {
-		autoAlpha: 0,
-		x: 100,
-		y: 100,
-		duration: 1.2
-	}, '-=1.2')
+	if(document.querySelector('body').classList.contains('home')){
+		const TLabout = gsap.timeline({
+			scrollTrigger:{
+				trigger: '#about',
+				start:"top 50%",
+				end:"top 20%",
+				onLeave: self => self.kill(false, true)
+			}
+		}, '+=0');
+		TLabout
+		.from(".s-about-img.img2", {
+			autoAlpha: 0,
+			x: -100,
+			y: -100,
+			duration: 1.2
+		}, '+=0.5')
+		.from(".s-about-img.img3", {
+			autoAlpha: 0,
+			x: -100,
+			y: 100,
+			duration: 1.2
+		}, '-=1.2')
+		.from(".s-about-img.img4", {
+			autoAlpha: 0,
+			x: 100,
+			y: -100,
+			duration: 1.2
+		}, '-=1.2')
+		.from(".s-about-img.img5", {
+			autoAlpha: 0,
+			x: 100,
+			y: 100,
+			duration: 1.2
+		}, '-=1.2')
 
-	const TLwhy = gsap.timeline({
-		scrollTrigger:{
-			trigger: '#why',
-			start:"top 50%",
-			end:"top 20%",
-			onLeave: self => self.kill(false, true)
-		}
-	}, '+=0');
-	TLwhy
-	.from(".s-why-info", {
-		autoAlpha: 0,
-		x: 100,
-		duration: 1.2
-	}, '+=0.5')
-
-
+		const TLwhy = gsap.timeline({
+			scrollTrigger:{
+				trigger: '#why',
+				start:"top 50%",
+				end:"top 20%",
+				onLeave: self => self.kill(false, true)
+			}
+		}, '+=0');
+		TLwhy
+		.from(".s-why-info-inner", {
+			autoAlpha: 0,
+			x: 100,
+			duration: 1.2
+		}, '+=0')
+	}
+	if(document.querySelector('body').classList.contains('about')){
+		const TLpabout = gsap.timeline({
+			scrollTrigger:{
+				trigger: '#pabout',
+				start:"top 50%",
+				end:"top 20%",
+				onLeave: self => self.kill(false, true)
+			}
+		}, '+=0');
+		TLpabout
+		.from(".p-about-block", {
+			autoAlpha: 0,
+			stagger: {
+				amount: 3,
+				from: "random"
+			},
+			y: 100,
+			duration: 2
+		}, '+=0')
+	}
+	if(document.querySelector('body').classList.contains('blogs')){
+		const TLpabout = gsap.timeline({
+			scrollTrigger:{
+				trigger: '#pblogs',
+				start:"top 50%",
+				end:"top 20%",
+				onLeave: self => self.kill(false, true)
+			}
+		}, '+=0');
+		TLpabout
+		.from(".p-about-blog-line", {
+			autoAlpha: 0,
+			stagger: 1.5,
+			y: 100,
+			duration: 2
+		}, '+=0')
+	}
 
 }
 
@@ -95,44 +132,44 @@ document.addEventListener("DOMContentLoaded",function(){
 
 (function () {
 
-		const smoothScroll = function (targetEl, duration) {
-			let target = document.querySelector(targetEl);
-			let targetPosition = target.getBoundingClientRect().top;
+	const smoothScroll = function (targetEl, duration) {
+		let target = document.querySelector(targetEl);
+		let targetPosition = target.getBoundingClientRect().top;
 
-			let startPosition = window.pageYOffset;
-			let startTime = null;
+		let startPosition = window.pageYOffset;
+		let startTime = null;
 
-			const ease = function(t,b,c,d) {
-				t /= d / 2;
-				if (t < 1) return c / 2 * t * t + b;
-				t--;
-				return -c / 2 * (t * (t - 2) - 1) + b;
-			};
-
-			const animation = function(currentTime){
-				if (startTime === null) startTime = currentTime;
-				const timeElapsed = currentTime - startTime;
-				const run = ease(timeElapsed, startPosition, targetPosition, duration);
-				window.scrollTo(0,run);
-				if (timeElapsed < duration) requestAnimationFrame(animation);
-			};
-			requestAnimationFrame(animation);
-
+		const ease = function(t,b,c,d) {
+			t /= d / 2;
+			if (t < 1) return c / 2 * t * t + b;
+			t--;
+			return -c / 2 * (t * (t - 2) - 1) + b;
 		};
-		let count = 0;
-		const scrollTo = function () {
-			const links = document.querySelectorAll('.js-scroll');
-			links.forEach(each => {
-				each.addEventListener('click', function () {
-					const currentTarget = this.getAttribute('href');
-					smoothScroll(currentTarget, 1000);
-					
 
-				});
+		const animation = function(currentTime){
+			if (startTime === null) startTime = currentTime;
+			const timeElapsed = currentTime - startTime;
+			const run = ease(timeElapsed, startPosition, targetPosition, duration);
+			window.scrollTo(0,run);
+			if (timeElapsed < duration) requestAnimationFrame(animation);
+		};
+		requestAnimationFrame(animation);
+
+	};
+	let count = 0;
+	const scrollTo = function () {
+		const links = document.querySelectorAll('.js-scroll');
+		links.forEach(each => {
+			each.addEventListener('click', function () {
+				const currentTarget = this.getAttribute('href');
+				smoothScroll(currentTarget, 1000);
+
+
 			});
-		};
-		scrollTo();
-	}());
+		});
+	};
+	scrollTo();
+}());
 
 let headers = document.querySelectorAll('.s-services-item-title');
 
