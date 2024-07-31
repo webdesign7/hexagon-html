@@ -1096,7 +1096,7 @@ a
 	&.about
 		.s-hero-content
 			align-items: flex-end
-			padding-bottom: 180px
+			padding-bottom: 280px
 		.s-about-title
 			color: #f0edd8;
 
@@ -1129,9 +1129,9 @@ a
 	&-bg
 		position: absolute
 		left: 0
-		top: 147px
+		top: 247px
 		width: 100%
-		height: calc(100% - 147px)
+		height: calc(100% - 247px)
 		background-image: url("../img/services-bg1.jpg")
 		background-position: center 0
 		background-size: cover
@@ -1140,7 +1140,7 @@ a
 		position: relative
 		z-index: 3
 	&-line
-		margin-top: -147px
+		margin-top: -247px
 		display: grid
 		grid-gap: 20px;
 		grid-template-columns: 1fr 1fr;
@@ -1199,7 +1199,7 @@ a
 		max-width: 898px
 		padding-top: 10px
 	&-blog
-		margin-top: -147px
+		margin-top: -247px
 		&-line
 			padding-top: 53px
 			margin: 0 -10px -20px
@@ -1259,7 +1259,7 @@ a
 				line-height: 20px;
 				color: #f0edd8;
 	&-article
-		margin-top: -147px
+		margin-top: -247px
 		&-img
 			img
 				width: 100%
@@ -1307,7 +1307,10 @@ a
 		padding-top: 60px
 		font-size: 18px
 
+
 @include respond-to(tablet)
+	.s-hero1.about .s-hero-content
+		padding-bottom: 180px
 	.p-about-line
 		display: flex
 		margin: -147px -15px -30px
