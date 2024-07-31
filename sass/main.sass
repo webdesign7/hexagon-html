@@ -51,7 +51,7 @@ a
 .img-responsive
 	display: block
 	max-width: 100%
-
+@import responsive
 .s-wrapper
 .container
 	padding: 0 15px
@@ -61,6 +61,9 @@ a
 .container
 	max-width: 1612px
 	margin: 0 auto
+@include respond-to(tv)
+	.container
+		max-width: 1236px
 .flex
 	display: -webkit-flex
 	display: -moz-flex 
@@ -89,7 +92,7 @@ a
 	flex-wrap: nowrap
 .inflex
 	display: inline-flex
-@import responsive
+
 
 .b-btn
 	height: 64px;
@@ -123,7 +126,7 @@ a
 				color: #fff
 				background-color: #6c0d0b
 
-@include respond-to(desktop-wide)
+@include respond-to(tv)
 	.b-btn
 		height: 50px
 		font-size: 18px
@@ -331,7 +334,7 @@ a
 	.s-header-menu li a
 		font-size: 31px
 		line-height: 1.5
-@include respond-to(desktop-wide)
+@include respond-to(tv)
 	.s-header-logo a
 		font-size: 50px
 @include respond-to(tablet)
@@ -346,7 +349,6 @@ a
 	.s-header.fix
 		.s-header-logo
 			opacity: 0
-	
 .s-hero1
 	position: absolute
 	left: 0
@@ -455,7 +457,7 @@ a
 				right: 0;
 				width: 50%;
 				transform: skew(0deg, -30deg);
-@include respond-to(desktop-wide)
+@include respond-to(tv)
 	.s-hero-title span.text1
 		font-size: 46px
 	.s-hero-title span.text2
@@ -532,18 +534,19 @@ a
 			position: absolute
 			right: -15%;
 			top: -11%;
-@include respond-to(desktop-wide)
+@include respond-to(tv)
 	.s-about-imgs
 		transform: scale(0.7);
+	.s-about-block.block1
+		width: 50%
+	.s-about-block.block2
+		width: 50%
 @include respond-to(desktop)
 	.s-about
 		padding: 100px 0
 	.s-about-descr
 		font-size: 24px
-	.s-about-block.block1
-		width: 50%
-	.s-about-block.block2
-		width: 50%
+	
 @include respond-to(tablet-large)
 	.s-about-imgs
 		transform: scale(1);
@@ -824,7 +827,7 @@ a
 		display: flex
 		justify-content: center
 		padding-top: 20px
-@include respond-to(tablet-large)
+@include respond-to(tv)
 	.s-offer .s-about-title
 		font-size: 45px
 	.s-offer-descr
@@ -962,7 +965,7 @@ a
 		&:hover
 			background-color: #0161ad
 			color: #fff
-@include respond-to(desktop)
+@include respond-to(tv)
 	.s-contact-items
 		padding-left: 20px
 @include respond-to(tablet-large)
@@ -1096,10 +1099,6 @@ a
 			padding-bottom: 180px
 		.s-about-title
 			color: #f0edd8;
-	&.blog
-		.s-hero-content
-			padding-bottom: 364px
-			padding-top: 327px
 
 .s-breadcrumb
 	color: #f0edd8;
@@ -1127,10 +1126,6 @@ a
 	position: relative
 	z-index: 4
 	padding-bottom: 90px
-	&.blog
-		.p-about-bg
-			height: calc(100% - 249px)
-			top: 249px
 	&-bg
 		position: absolute
 		left: 0
@@ -1204,7 +1199,7 @@ a
 		max-width: 898px
 		padding-top: 10px
 	&-blog
-		margin-top: -249px
+		margin-top: -147px
 		&-line
 			padding-top: 53px
 			margin: 0 -10px -20px
