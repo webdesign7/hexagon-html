@@ -29,7 +29,8 @@ ul
 
 a:focus
 	outline: none
-
+a
+	outline: none !important
 
 .hidden-item
 	display: none
@@ -1095,7 +1096,7 @@ a
 .s-hero1
 	&.about
 		.s-hero-content
-			align-items: flex-end
+			align-items: flex-start
 			padding-bottom: 280px
 		.s-about-title
 			color: #f0edd8;
@@ -1154,6 +1155,8 @@ a
 		&.block3
 			grid-column: 2
 			grid-row: 1 / span 2
+			.p-about-img
+				padding-top: 40px
 		&.block4
 			grid-column: 1 / span 2
 			grid-row: 3
@@ -1313,10 +1316,10 @@ a
 		padding-bottom: 180px
 	.p-about-line
 		display: flex
-		margin: -147px -15px -30px
+		margin: -247px -15px -20px
 		flex-wrap: wrap
 	.p-about-block
-		padding: 0 15px 30px
+		padding: 0 15px 20px
 		width: 100%
 	.p-about-item
 		padding: 40px 30px

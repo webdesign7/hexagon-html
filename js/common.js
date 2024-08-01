@@ -65,37 +65,34 @@ const aboutAnim = () => {
 		const TLpabout = gsap.timeline({
 			scrollTrigger:{
 				trigger: '#pabout',
-				start:"top 50%",
+				start:"top 90%",
 				end:"top 20%",
 				onLeave: self => self.kill(false, true)
 			}
 		}, '+=0');
 		TLpabout
-		.from(".p-about-block", {
+		.from(".p-about-block.anim", {
 			autoAlpha: 0,
-			stagger: {
-				amount: 3,
-				from: "random"
-			},
+			stagger: 1,
 			y: 100,
-			duration: 2
+			duration: 1
 		}, '+=0')
 	}
 	if(document.querySelector('body').classList.contains('blogs')){
 		const TLpabout = gsap.timeline({
 			scrollTrigger:{
 				trigger: '#pblogs',
-				start:"top 50%",
+				start:"top 70%",
 				end:"top 20%",
 				onLeave: self => self.kill(false, true)
 			}
 		}, '+=0');
 		TLpabout
-		.from(".p-about-blog-line", {
+		.from(".p-about-blog-line.anim", {
 			autoAlpha: 0,
-			stagger: 1.5,
+			stagger: 1,
 			y: 100,
-			duration: 2
+			duration: 1,
 		}, '+=0')
 	}
 
@@ -126,6 +123,14 @@ document.addEventListener("DOMContentLoaded",function(){
 			document.querySelector('.s-menu').classList.toggle('active');
 		});
 	}
+	document.querySelectorAll('.s-menu a').forEach((item) => {
+		item.addEventListener('click', function(e){
+			e.preventDefault();
+			document.querySelector('.js-toggle').classList.remove('active');
+			document.querySelector('.s-header').classList.remove('fix');
+			document.querySelector('.s-menu').classList.remove('active');
+		});
+	})
 
 	aboutAnim();
 });
