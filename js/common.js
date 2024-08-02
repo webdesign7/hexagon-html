@@ -125,7 +125,6 @@ document.addEventListener("DOMContentLoaded",function(){
 	}
 	document.querySelectorAll('.s-menu a').forEach((item) => {
 		item.addEventListener('click', function(e){
-			e.preventDefault();
 			document.querySelector('.js-toggle').classList.remove('active');
 			document.querySelector('.s-header').classList.remove('fix');
 			document.querySelector('.s-menu').classList.remove('active');
