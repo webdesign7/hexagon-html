@@ -1,13 +1,3 @@
-const height = window.screen.height
-gsap.utils.toArray(".s-top").forEach((panel, i) => {
-	ScrollTrigger.create({
-		trigger: panel,
-		start: "top top", 
-		pin: true, 
-		pinSpacing: false,
-		end:'+=2000',
-	});
-});
 
 const aboutAnim = () => {
 
@@ -132,6 +122,9 @@ document.addEventListener("DOMContentLoaded",function(){
 	})
 
 	aboutAnim();
+	jarallax(document.querySelectorAll('.js-anim'), {
+  speed: 0.2,
+});
 });
 
 
@@ -199,3 +192,4 @@ function openCurrAccordion() {
 		
 	}
 }
+
